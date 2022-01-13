@@ -1,20 +1,7 @@
-Rutgers University Computer Science thesis template
+Rutgers University Ph.D. thesis template
 ===================================================
 
-The following LaTeX style file is a version of the
-[Department of Mathematics style file](http://www.math.rutgers.edu/grad/phd_requirements/thesis.html),
-customized for students in the Department of Computer Science. It is
-based on the
-[official university style guide](http://gsnb.rutgers.edu/academics/electronic-thesis-and-dissertation-style-guide).
-
-    thesis.tex - a barebones LaTeX file for your thesis
-    ruthesis.cls - a LaTeX style file for your thesis
-
-Usage
------
-
-To use this style file, clone this repository, and build using pdflatex:
-
-    git clone https://github.com/rucsgss/thesis.git
-    cd ~/thesis
-    pdflatex thesis
+This repo is forked from `rucsgss/thesis` for some minor updates according to the [recent style guide](http://gsnb.rutgers.edu/academics/electronic-thesis-and-dissertation-style-guide):
+1. use 1.5in for left margin and 1in for other margins by `geometry`.
+2. fix some capital letters in title page. See [sample page](https://grad.rutgers.edu/sites/default/files/2021-07/sample_phd_title_page_0.pdf).
+3. put the copyright page before the title page. See [sample page](https://grad.rutgers.edu/sites/default/files/2021-07/sample_copyright_page.pdf). 

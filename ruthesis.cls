@@ -371,7 +371,7 @@
          }
         \vskip 2ex plus 2ex minus 2ex 
         {\centering\bfseries
-          by\\ \uppercase\expandafter{\@author}\par
+          By\\ \uppercase\expandafter{\@author}\par
           \nobreak
           \vskip 4ex plus 2ex minus 2ex 
           \ifdraft%
@@ -392,7 +392,7 @@
              \vskip 1ex
              Written under the direction of\\
              \@director\\
-             and approved by\\ 
+             And approved by\\ 
              \vskip 2ex plus 1ex minus 2ex
 
              \newcount\@aplines
@@ -429,8 +429,8 @@
 \newcommand\beforepreface{%
         \pagenumbering{roman}
         \pagestyle{empty}
-        \titlep
         \ifcopyright\copyrightp\fi  
+        \titlep
         \c@page2 % set page counter so that next is 2
         \pagestyle{plain}
         \ifabstract{%
