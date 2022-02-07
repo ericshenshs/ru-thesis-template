@@ -270,21 +270,32 @@
 % so that single spacing is used.
 % (Note \def\figure{\@float{figure}<set single spacing>} doesn't work
 %  because figure has an optional argument)
-\def\@xfloat#1[#2]{\ifhmode \@bsphack\@floatpenalty -\@Mii\else
-   \@floatpenalty-\@Miii\fi\def\@captype{#1}\ifinner
-      \@parmoderr\@floatpenalty\z@
-    \else\@next\@currbox\@freelist{\@tempcnta\csname ftype@#1\endcsname
-       \multiply\@tempcnta\@xxxii\advance\@tempcnta\sixt@@n
-       \@tfor \@tempa :=#2\do
-                        {\if\@tempa h\advance\@tempcnta \@ne\fi
-                         \if\@tempa t\advance\@tempcnta \tw@\fi
-                         \if\@tempa b\advance\@tempcnta 4\relax\fi
-                         \if\@tempa p\advance\@tempcnta 8\relax\fi
-         }\global\count\@currbox\@tempcnta}\@fltovf\fi
-    \global\setbox\@currbox\vbox\bgroup 
-    \def\baselinestretch{1}\@normalsize
-    \boxmaxdepth\z@
-    \hsize\columnwidth \@parboxrestore}
+
+% >>> to resolve the issue caused by redefining @xfloat in Tex Live 2021 >>>
+
+% "Patching internal LaTeX commands inside a document class 
+% was necessary in LaTeX 2.09 days, 
+% but is IMHO a bad idea in "modern" LaTeX2e times." 
+% The package `setspace` automatically set captions in floats single spacing.
+% See https://latex.org/forum/viewtopic.php?t=8918.
+\RequirePackage{setspace}
+%\def\@xfloat#1[#2]{\ifhmode \@bsphack\@floatpenalty -\@Mii\else
+%  \@floatpenalty-\@Miii\fi\def\@captype{#1}\ifinner
+%     \@parmoderr\@floatpenalty\z@
+%   \else\@next\@currbox\@freelist{\@tempcnta\csname ftype@#1\endcsname
+%      \multiply\@tempcnta\@xxxii\advance\@tempcnta\sixt@@n
+%      \@tfor \@tempa :=#2\do
+%                       {\if\@tempa h\advance\@tempcnta \@ne\fi
+%                        \if\@tempa t\advance\@tempcnta \tw@\fi
+%                        \if\@tempa b\advance\@tempcnta 4\relax\fi
+%                        \if\@tempa p\advance\@tempcnta 8\relax\fi
+%        }\global\count\@currbox\@tempcnta}\@fltovf\fi
+%   \global\setbox\@currbox\vbox\bgroup 
+%   \def\baselinestretch{1}\@normalsize
+%   \boxmaxdepth\z@
+%   \hsize\columnwidth \@parboxrestore}
+
+% <<< to resolve the issue caused by redefining @xfloat in Tex Live 2021 <<<
 
 % Single space footnotes.
 \long\def\@footnotetext#1{\insert\footins{\def\baselinestretch{1}\footnotesize
