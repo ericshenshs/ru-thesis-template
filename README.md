@@ -1,4 +1,4 @@
-Rutgers University Ph.D. thesis template
+Rutgers University Ph.D. Thesis Template
 ===================================================
 
 This repo is forked from `rucsgss/thesis` for some minor updates according to the [recent style guide](http://gsnb.rutgers.edu/academics/electronic-thesis-and-dissertation-style-guide):
